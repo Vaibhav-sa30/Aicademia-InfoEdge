@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible AI Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .paper {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .paper h2 {
+            margin-top: 0;
+        }
+        .paper p {
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Responsible AI Hub</h1>
+        <div id="paper-details">Loading...</div>
+    </div>
+    <script>
+        async function fetchPaperDetails() {
+            console.log('Fetching paper details...');
+            try {
+                const timestamp = new Date().getTime();
+                const response = await fetch(`/api/papers?timestamp=${timestamp}`, {
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                console.log('Received data:', data);
+    
+                let content = '';
+    
+                if (data.engineer_paper) {
+                    content += `
+                        <div class="paper">
+                            <h2>Engineer Paper</h2>
+                            <p><strong>Title:</strong> ${data.engineer_paper.title}</p>
+                            <p><strong>Summary:</strong> ${data.engineer_paper.summary}</p>
+                            <p><strong>Authors:</strong> ${data.engineer_paper.authors.join(', ')}</p>
+                            <a href="${data.engineer_paper.link}" class="button" target="_blank">Download Paper</a>
+                        </div>
+                    `;
+                }
+    
+                if (data.ethicist_paper) {
+                    content += `
+                        <div class="paper">
+                            <h2>Ethicist Paper</h2>
+                            <p><strong>Title:</strong> ${data.ethicist_paper.title}</p>
+                            <p><strong>Summary:</strong> ${data.ethicist_paper.summary}</p>
+                            <p><strong>Authors:</strong> ${data.ethicist_paper.authors.join(', ')}</p>
+                            <a href="${data.ethicist_paper.link}" class="button" target="_blank">Download Paper</a>
+                        </div>
+                    `;
+                }
+    
+                if (data.policyMaker_paper) {
+                    content += `
+                        <div class="paper">
+                            <h2>PolicyMaker Paper</h2>
+                            <p><strong>Title:</strong> ${data.policyMaker_paper.title}</p>
+                            <p><strong>Summary:</strong> ${data.policyMaker_paper.summary}</p>
+                            <p><strong>Authors:</strong> ${data.policyMaker_paper.authors.join(', ')}</p>
+                            <a href="${data.policyMaker_paper.link}" class="button" target="_blank">Download Paper</a>
+                        </div>
+                    `;
+                }
+    
+                document.getElementById('paper-details').innerHTML = content;
+            } catch (error) {
+                console.error('Error fetching paper details:', error);
+            }
+        }
+    
+        fetchPaperDetails();
+        setInterval(fetchPaperDetails, 5000);  // Fetch new paper details every 5 seconds
+    </script>
+    
+</body>
+</html>
