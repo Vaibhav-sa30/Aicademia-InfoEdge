@@ -1,0 +1,444 @@
+/* :root{
+    --primary-color: rgb(70, 255, 255);
+    --secondary-color: rgb(187, 252, 252);
+    --tex-color: rgb(0, 84, 84);
+} */
+
+/* :root{
+    --primary-color: rgb(255, 126, 70);
+    --secondary-color: rgb(252, 219, 187);
+    --tex-color: rgb(84, 48, 0);
+} */
+
+
+:root{
+    --primary-color: rgb(171, 171, 171);
+    --secondary-color: rgb(220, 220, 220);
+    --tex-color: rgb(37, 37, 37);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    position: fixed; /* Fix the navbar at the top */
+    width: 100%; /* Ensure the navbar spans the entire width */
+    z-index: 1000; /* Ensure the navbar stays above other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    top: 0; 
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.header_section {
+    background-color: rgba(0, 0, 0, 0); /* Default fully transparent background */
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.header_section.opaque {
+    background-color: rgb(54, 54, 54); /* Opaque background when scrolled */
+}
+
+
+
+#video-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-items ul li {
+    margin-right: 20px;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-items ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    transition-duration: 0.5s;
+}
+
+.brand-title {
+    font-weight: bold;
+    font-size: 43px;
+}
+
+.wrapper {
+    margin-top: 60px; /* Ensure content starts below the fixed navbar */
+    flex: 1;
+    padding: 20px;
+}
+
+
+section {
+    display: flex; /* Make the section a flex container */
+    justify-content: space-between; /* Space items evenly */
+}
+
+
+
+.Box1, .Box2, .Box3 {
+    flex: 1; /* Make the boxes grow to fill available space */
+    padding: 20px;
+    margin: 25px;
+    width: 300px; /* Set a fixed width */
+    height: 340px; /* Set a fixed height */
+    border: 1px solid #17c6c600; /* Add border for visualization */
+    height: 340px;
+    background-color: #fdf6ca6a;
+    color: #505050;
+    overflow: hidden;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Shadow effect */
+    padding: 40px;
+}
+
+.Box1, .Box2, .Box3, p{
+
+    text-align: center;
+    
+}
+.box-heading{
+    padding: 8px;
+    padding-bottom: 20px;
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 20px;
+    
+    
+    border-bottom: #505050 1px solid;
+    width: 230px;
+    height: 80px;
+}
+
+
+
+
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.home-content h3{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.home-content h1{
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+
+
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 600px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Responsible AI";
+    color: var(--tex-color);
+    animation: words 13s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--secondary-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left:  3px black;
+    right: -8px;
+    animation: cursor 0.4s infinite, typing 13s steps(60) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 1px solid var(--tex-color);
+    }
+}
+@keyframes words {
+    0%,
+    33.33% {
+        content: "Trustworthy AI";
+    }
+    33.34%,
+    66.66% {
+        content: "Learnable AI";
+    }
+    66.67%,
+    100% {
+        content: "Responsible AI";
+    }
+}
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
+
+.video-container {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure the text is in front of the video */
+}
+
+.problem-section, .solution-section, .compare-section{
+    padding-bottom: 0px;
+} 
+
+#scroll-button {
+    background-color: #00000077;
+    color: rgb(255, 255, 255);
+    border: none; 
+    border-radius: 40px;
+    width: 15%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 23px;
+    font-size: large;
+    font-weight: 700;
+    display: none; 
+}
+
+
+#scroll-button:hover{
+    font-size: larger;
+    cursor: pointer;   
+    border: 2px solid;
+    border-color: rgb(116, 116, 116);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#scroll-button, a{
+    text-decoration: none;
+    color: #d4d4d4;
+    size: 10px;
+}
+
+
+.problem-heading{
+    
+    text-align: center;
+    padding: 10px;
+    color: rgb(61, 61, 61);
+    font-size: larger;
+    border-bottom: #777777 2px solid;
+    margin-left: 250px;
+    margin-right: 250px;
+    padding-bottom: 50px;
+    margin-bottom: -100px;
+
+}
+
+
+.compare-section{
+    
+    justify-content: center;
+}
+
+
+.compare-box {
+    overflow-x: auto;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 20px;
+    text-align: left;
+}
+
+.compare-table th {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.compare-table th::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+}
+
+.compare-table th:hover::before {
+    left: 150%;
+}
+
+.compare-table td {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.compare-table tr:hover td {
+    background-color: #e0e7ff;
+}
+
+.compare-table tr:nth-child(odd) td {
+    background-color: #fcfcfc;
+}
+
+.compare-table td:first-child {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.compare-table td:last-child {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.compare-table td::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.05);
+    transform: rotate(45deg);
+    z-index: 0;
+    transition: top 0.5s ease, left 0.5s ease;
+}
+
+.compare-table td:hover::before {
+    top: -70%;
+    left: -70%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cross-tick {
+    width: 20px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align with text */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.compare-table td { /* Use inline-flex to prevent block layout */
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.compare-table img {
+    flex-shrink: 0;
+}
+
+footer{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+

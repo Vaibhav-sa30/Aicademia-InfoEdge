@@ -1,0 +1,9 @@
+Flask
+Flask-Cors
+pandas
+numpy
+scikit-learn
+aif360
+tensorflow
+motor
+aiohttp
