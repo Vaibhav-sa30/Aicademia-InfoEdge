@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="..\static\style\login-style.css">
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+      
+
+      
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Login</h2>  
+        </div>
+          
+            <form action="{{ url_for('user_login') }}" method="post" class="login-form">
+                <div class="username">
+                    <label for="username">Email or Username</label>
+                    <input type="text" class="form-control" id="username" name="username_or_email" placeholder="Enter your Username or Email">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password"  name="password" placeholder="Enter your password">
+                </div>
+                <div class="remember-forget">
+                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                        <input type="checkbox" checked="unchecked"/>
+                        <div class="control__indicator"></div>
+                    </label>
+                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password?</a></span> 
+                </div>
+                <div class="login-other">
+                  <input type="submit" value="Log In" class="btn text-white btn-block btn-primary">
+                  <span class="d-block text-left my-4 text-muted">or sign in with</span>
+                </div>
+                
+                <div class="social-login">
+                    <a href="#" class="facebook"><span class="icon-facebook mr-3"></span></a>
+                    <a href="#" class="twitter"><span class="icon-twitter mr-3"></span></a>
+                    <a href="#" class="google"><span class="icon-google mr-3"></span></a>
+                </div>
+            </form>
+            
+        </div>
+        <div class="divider"></div>
+
+        <div class="carousel-container">
+          <h2>Welcome to Aicademia</h2>
+          <p>Don't have an account?</p>
+          <a href="{{ url_for('register') }}" class="signup-btn">Sign Up here!</a>
+          <img src="{{ url_for('static', filename='assets\pexels-pavel-danilyuk-8438927.jpg') }}" alt="">
+        </div>
+    </div>
+
+  </body>
+</html>

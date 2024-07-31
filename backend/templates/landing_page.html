@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aicademia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/landing-style.css') }}">
+</head>
+
+<body class="asul-regular">
+    <header class="header_section" id="navbar">
+        <nav>
+            <div class="brand-title">
+                Aicademia
+            </div>
+            <div class="nav-items">
+                <ul>
+                    <li><a href="#">Contribute</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="video-container">
+        <video autoplay muted loop id="video-bg">
+            <source src="{{ url_for('static', filename='assets/8328096-uhd_3840_2160_25fps.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-overlay">
+            <h1>Towards Human Aligned AI</h1>
+            <br>
+            <p>[Will additional text look good here?]</p>
+        </div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Ai<span>cademia</span></h1>
+            <h3 class="text-animation">Building An Educated Future With <span></span></h3>
+        </div>
+    </section>
+
+    <div class="problem-heading">
+        <h1>Problems in Responsible AI Implementation</h1>
+    </div>
+    <section class="problem-section">
+        <div class="Box1">
+            <div class="box-heading">
+                <h3>Knowledge Gap</h3>
+            </div>
+            <div>
+                <p>Access to 500+ Research Papers on responsible AI and other resources like whitepapers,
+                    articles, blogs, newsletters, hackathons, open source projects, books, online/offline events</p>
+            </div>
+        </div>
+        <div class="Box2">
+            <div class="box-heading">
+                <h3>Infrastructure Deficiency</h3>
+            </div>
+            <div>
+                <p>Access to 500+ Research Papers on responsible AI and other resources like whitepapers,
+                    articles, blogs, newsletters, hackathons, open source projects, books, online/offline events</p>
+            </div>
+        </div>
+        <div class="Box3">
+            <div class="box-heading">
+                <h3>Business Implementation</h3>
+            </div>
+            <div>
+                <p>Access to 500+ Research Papers on responsible AI and other resources like whitepapers,
+                    articles, blogs, newsletters, hackathons, open source projects, books, online/offline events</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="problem-heading">
+        <h1>How We Help</h1>
+    </div>
+    <section class="solution-section">
+        <div class="Box1">
+            <div class="box-heading">
+                <h3>Bridging The Knowledge Gap</h3>
+            </div>
+            <div>
+                <p>Access to 500+ Research Papers on responsible AI and other resources like whitepapers,
+                    articles, blogs, newsletters, hackathons, open source projects, books, online/offline events</p>
+            </div>
+        </div>
+        <div class="Box2">
+            <div class="box-heading">
+                <h3>Tools and Frameworks</h3>
+            </div>
+            <div>
+                <p>Building Tools For Seamless Responsible AI integration</p>
+            </div>
+        </div>
+        <div class="Box3">
+            <div class="box-heading">
+                <h3>Business Consultancy</h3>
+            </div>
+            <div>
+                <p>Access to 500+ Research Papers on responsible AI and other resources like whitepapers,
+                    articles, blogs, newsletters, hackathons, open source projects, books, online/offline events</p>
+            </div>
+        </div>
+        <!-- <div>
+            <p>
+                What's our process? We use a great number of responsible AI research resources all over the world,
+                including research portals, AI journals, universities and conferences. We sift through these sources
+                every day and search for new interesting articles and papers. By the end of each year, thousands of
+                responsible AI papers have been investigated in this way.
+            </p>
+        </div> -->
+    </section>
+
+    <div class="problem-heading">
+        <h1>Why Aicademia?</h1>
+    </div>
+    <section class="compare-section">
+        <div class="compare-box">
+            <table class="compare-table">
+                <tr>
+                    <th>Without Aicademia</th>
+                    <th>With Aicademia</th>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='assets/cancel.png') }}" alt="" class="cross-tick">
+                        Material scattered all over the internet</td>
+                    <td><img src="{{ url_for('static', filename='assets/checked.png') }}" alt="" class="cross-tick"> One
+                        place for all types of research papers</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='assets/cancel.png') }}" alt="" class="cross-tick"> Hard
+                        to find and manage</td>
+                    <td><img src="{{ url_for('static', filename='assets/checked.png') }}" alt="" class="cross-tick">
+                        Easy search and management</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='assets/cancel.png') }}" alt="" class="cross-tick">
+                        Subscription-based pricing model</td>
+                    <td><img src="{{ url_for('static', filename='assets/checked.png') }}" alt="" class="cross-tick">
+                        One-time payment, lifetime access</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='assets/cancel.png') }}" alt="" class="cross-tick">
+                        Confused about where to start</td>
+                    <td><img src="{{ url_for('static', filename='assets/checked.png') }}" alt="" class="cross-tick">
+                        Content roadmap suggestions based on your level</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <button id="scroll-button"><a href="{{ url_for('user_login') }}">Start Learning</a></button>
+
+    <p>POWERED BY FetchAI</p>
+
+    <footer>
+        <p> Copyright &copy; 2024 Aicademia</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

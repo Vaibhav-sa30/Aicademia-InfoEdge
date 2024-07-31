@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/registration-style.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="register-container">
+
+
+        <div class="carousel-container">
+            <h2>Welcome to Aicademia</h2>
+            <p>Already have an account?</p>
+            <button class="login-btn">
+                <a href="{{ url_for('user_login') }}" class="login-btn-link">Login here!</a>
+              </button>
+              
+            
+            <img src="{{ url_for('static', filename='assets/pexels-pavel-danilyuk-8438933.jpg') }}" alt="">
+          </div>
+
+        
+        <div class="divider"></div>
+        <div class="form-container">
+          <div class="form-header">
+            <h2>Registration</h2>  
+          </div>
+            
+              <form action="{{ url_for('register') }}" method="post" class="login-form">
+                  <div class="email">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" id="email" name="email" placeholder="Enter your Email">
+                  </div>
+                  <div class="password">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password"  name="password" placeholder="Enter your password">
+                  </div>
+                  <div class="cnf-password">
+                      <label for="cnf-password">Confirm Password</label>
+                      <input type="password" class="form-control" id="cnf-password"  name="cnf-password" placeholder="Confirm your password">
+                  </div>
+                  <div class="login-other">
+                    <input type="submit" value="Sign Up" class="signup-btn">
+                    
+                  </div>
+                  
+              </form>
+              
+          </div>
+  
+
+      </div>
+  
+</body>
+</html>

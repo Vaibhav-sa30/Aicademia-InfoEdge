@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container{
+    width: 65%; /* Fixed width for the container */
+    height: 85%; /* Fixed height for the container */
+    border-radius: 10px;
+    margin: 120px;
+    display: flex;
+    
+    background-color: rgb(255, 249, 242);
+
+}
+
+.form-container{
+    margin: 20px;
+    width: 50%;
+    margin-right: 10px;
+    
+    border-radius: 30px;
+    background-color: antiquewhite;
+}
+
+.form-header{
+    margin: 10px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 22px;
+    border-bottom: #807f7f 2px solid;
+    margin-top: 35px;
+    color: #363636;
+}
+
+.login-form{
+    margin: 10px;
+}
+
+.username, .password, .remember-forget{
+    margin: 25px;
+    
+}
+
+
+.username, .password{
+    margin-right: 30px;
+}
+
+.remember-forget {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between; /* Distributes space between items */
+    padding-left: 5px;
+    padding-right: 15px;
+    color: #363636;
+}
+
+.control {
+    display: flex;
+    align-items: center; /* Align checkbox and label text vertically */
+}
+
+.login-other{
+    border-bottom: #848484 1px solid;
+    padding-bottom: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+}
+
+.forgot-pass {
+    margin-left: auto; /* Pushes the link to the far right */
+}
+
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-form .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 18px;
+}
+
+.username, label{
+    padding-left: 10px;
+    color: #4d4d4d;
+}
+
+.password, label{
+    padding-left: 10px;
+    color: #4d4d4d;
+}
+
+.login-form .btn {
+    width: 50%;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3e3e3e;
+    color: white;
+    font-size: 16px;
+    cursor: hand;
+    align-items: center;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.login-form .btn:hover {
+    background-color: #001e41;
+    color: #efefef;
+}
+
+.login-form .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-form .control--checkbox {
+    position: relative;
+    padding-left: 24px;
+    cursor: hand;
+    user-select: none;
+}
+
+.login-form .control--checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.login-form .control__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+
+.login-form .control--checkbox input:checked ~ .control__indicator {
+    background-color: #007bff;
+}
+
+.login-form .control__indicator::after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.login-form .control--checkbox input:checked ~ .control__indicator::after {
+    display: block;
+}
+
+.login-form .control--checkbox .control__indicator::after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+.login-form .ml-auto {
+    margin-left: auto;
+}
+
+.login-form .forgot-pass {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-form .forgot-pass:hover {
+    text-decoration: underline;
+}
+
+
+.login-form .social-login a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-form .social-login a:hover {
+    text-decoration: underline;
+}
+
+.login-form .signup-btn {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;  
+
+}
+
+.login-form .signup-btn:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    width: 1px;
+    background-color: #c4c4c4;
+}
+
+
+
+
+
+
+
+
+.carousel-container{
+    border-radius: 30px;
+    position: relative;
+    margin: 20px;
+    margin-left: 10px;
+    width: 50%;
+    overflow: hidden;
+    /* flex-direction: column;  */
+    max-width: none;
+    object-fit: cover;
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+    align-items: center;
+
+    box-sizing: border-box;
+    object-position: center;
+    
+}
+
+.carousel-container img{
+    height:100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5; /* Translucent effect */
+    z-index: 0;
+    
+}
+
+.carousel-container h2,
+.carousel-container p,
+.carousel-container .signup-btn {
+    position: relative;
+    z-index: 1;
+    color: #fff; /* White text for contrast */
+    text-align: center;
+}
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-container h2,
+.carousel-container p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-container h2{
+    margin-top: -300px ;
+    font-size: 30px;
+    color: #d4d4d4;
+    border-bottom: #646464 2px solid;
+    padding-bottom: 30px;
+}
+
+
+
+.carousel-container p {
+    font-size: 13.4px;
+    margin-bottom: 20px;    
+    display: block;
+    margin-left: -180px;
+
+}
+
+.signup-btn {
+    background-color: #363636;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #2c2c2c;
+}
+
+.signup-btn:active {
+    background-color: #003f7f;
+}
+
+
+
+
+
+
